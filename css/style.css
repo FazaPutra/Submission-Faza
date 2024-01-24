@@ -1,0 +1,306 @@
+:root {
+  --primary: #050432;
+  --bg: #ca9400;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+}
+
+body {
+  background-color: var(--primary);
+  font-family: "poppins", sans-serif;
+  color: #fff;
+}
+
+/*hero*/
+.hero {
+  padding-top: 13rem;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.hero h2 {
+  text-align: center;
+  font-size: 1.5rem;
+  color: white;
+  font-weight: 500;
+}
+
+.hero h3 {
+  text-align: center;
+  font-size: 3rem;
+  margin: 6px 0;
+  color: var(--bg);
+  font-weight: 700;
+}
+
+.hero p {
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 200;
+}
+
+.hero button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 13px;
+  margin: 2rem auto;
+  background-color: var(--primary);
+  color: #fff;
+  border: 2px solid white;
+  border-radius: 20px;
+  box-shadow: 0 0 3px 3px rgb(255, 179, 0);
+  transition: all 0.2s;
+  font-weight: 700;
+}
+
+.hero button:hover {
+  background-color: var(--bg);
+  letter-spacing: 0.25em;
+  transform: scale(1.025);
+  box-shadow: none;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 7%;
+  background-color: rgba(1, 1, 50, 0.8);
+  border-bottom: 1px solid #fff;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 999;
+}
+
+.navbar .navbar-logo {
+  font-size: 1.7rem;
+  font-weight: 700;
+  color: #fff;
+  font-style: italic;
+}
+
+.navbar .navbar-logo span {
+  color: var(--bg);
+}
+
+.navbar .navbar-nav a {
+  color: #fff;
+  display: inline-block;
+  font-size: 1rem;
+  margin: 0 1rem;
+}
+
+.navbar .navbar-nav a:hover {
+  color: var(--bg);
+}
+
+.navbar .navbar-nav a::after {
+  content: "";
+  display: block;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--bg);
+  transform: scaleX(0);
+  transition: 0.2s linear;
+}
+
+.navbar .navbar-nav a:hover::after {
+  transform: scaleX(0.7);
+}
+
+.navbar .navbar-exstra a {
+  color: #fff;
+  margin: 0 0.5rem;
+}
+
+.navbar .navbar-exstra a:hover {
+  color: var(--bg);
+  transition: 0.1s linear;
+}
+
+#hamburger {
+  display: none;
+}
+
+#museum {
+  margin: 1.5rem 0;
+}
+
+.content-image {
+  width: 100%;
+  max-height: 227px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.card {
+  box-shadow: 0 1px 8px 1px var(--bg);
+  border-radius: 7px;
+  padding: 20px;
+  background-color: var(--primary);
+}
+
+#content {
+  float: left;
+  width: 75%;
+}
+
+aside {
+  float: right;
+}
+
+#description {
+  padding: 20px;
+  display: flex;
+  gap: 0.5rem;
+  background-color: #e1e0e0;
+}
+
+#description h4 {
+  color: #fff;
+  font-weight: 500;
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+}
+
+#description p {
+  font-size: 1rem;
+  font-weight: 300;
+  color: #fff;
+}
+
+header {
+  display: inline;
+}
+
+.profile header {
+  text-align: center;
+}
+
+.profile img {
+  width: 107px;
+}
+
+figure img {
+  padding-top: 1rem;
+}
+
+aside {
+  margin-left: 1rem;
+}
+
+figcaption {
+  margin-bottom: 0.5rem;
+}
+
+table {
+  font-size: 0.8rem;
+  text-align: left;
+}
+
+h6 {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-top: 1rem;
+}
+
+.card h2,
+#about h4,
+#museum h4,
+#monument h4,
+h6 {
+  color: var(--bg);
+}
+
+footer {
+  padding: 20px;
+  color: white;
+  background-color: var(--primary);
+  text-align: center;
+  font-weight: bold;
+}
+
+/* Media Queries */
+
+/* Laptop */
+@media (max-width: 1366px) {
+  html {
+    font-size: 95%;
+  }
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  html {
+    font-size: 65%;
+  }
+
+  #hamburger {
+    display: inline-block;
+  }
+
+  .navbar .navbar-nav {
+    position: absolute;
+    top: 100%;
+    right: -100%;
+    background-color: #fff;
+    width: 20rem;
+    height: 100vh;
+    transition: 0.3s;
+  }
+
+  .navbar .navbar-nav.active {
+    right: 0;
+  }
+
+  .navbar .navbar-nav a {
+    color: #000;
+    display: block;
+    margin: 1.5rem;
+    padding: 0.5rem;
+    font-size: 1.5rem;
+  }
+
+  .navbar .navbar-nav a::after {
+    transform-origin: 0 0;
+  }
+
+  .navbar .navbar-nav a:hover::after {
+    transform: scaleX(0.2);
+  }
+
+  .profile {
+    display: none;
+  }
+
+  #content {
+    width: 100%;
+    margin-left: 1.5rem;
+  }
+
+  .card {
+    margin-top: 0.2rem;
+  }
+
+  .hero {
+    padding-top: 19rem;
+  }
+}
+
+/* Phone */
+@media (max-width: 450px) {
+  html {
+    font-size: 55%;
+  }
+}
